@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class MY_User_agent extends CI_User_agent
 {
-
+    // fake user agent strings for test purpose
     private $fake_user_agents = array(
         'iphone' => "Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/603.1.23 (KHTML, like Gecko) Version/10.0 Mobile/14E5239e Safari/602.1",
         'macintosh' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12',
@@ -38,6 +38,9 @@ class MY_User_agent extends CI_User_agent
     }
 
 
+    /**
+     * @return array
+     */
     public function get_fake_user_agent()
     {
         return $this->fake_user_agents;
