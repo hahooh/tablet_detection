@@ -13,7 +13,7 @@ class MY_User_agent extends CI_User_agent
 
             $user_agent = trim($_SERVER['HTTP_USER_AGENT']);
             $is_tablet = preg_match('#.*ipad.*#i', $user_agent);
-            $is_tablet = $is_tablet + preg_match('#Android\' + \'Chrome/[.0-9]* (?!Mobile)#i', $user_agent);
+            $is_tablet = $is_tablet + preg_match('#.* Android .* Chrome/[.0-9]* (?!Mobile)#i', $user_agent);
 
             if ($is_tablet > 0)
                 return true;
@@ -22,5 +22,21 @@ class MY_User_agent extends CI_User_agent
         } else {
             return false;
         }
+    }
+
+    /**
+     * @return array
+     */
+    public function show_browsers()
+    {
+        return $this->browsers;
+    }
+
+    /**
+     * @return array
+     */
+    public function show_mobiles()
+    {
+        return $this->mobiles;
     }
 }
